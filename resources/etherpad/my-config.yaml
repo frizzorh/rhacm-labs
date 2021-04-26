@@ -3,4 +3,4 @@ data:
   foo: bar
 kind: ConfigMap
 metadata:
-  name: my-config
+  name: my-config-yaml
