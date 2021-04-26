@@ -5,6 +5,6 @@
     },
     "kind": "ConfigMap",
     "metadata": {
-        "name": "my-config",
+        "name": "my-config-json",
     }
 }
