@@ -37,7 +37,12 @@ spec:
 #          value: ''
         - name: NODE_ENV
           value: production
-        image: etherpad/etherpad:latest
+        image: quay.io/gpte-devops-automation/etherpad:latest
+        command: ["/bin/sh"]
+        args:
+          - '-c'
+          - >-
+              cp config/settings.json . && ./src/bin/run.sh
         imagePullPolicy: Always
         name: etherpad
         ports:
