@@ -24,15 +24,15 @@ spec:
         - name: DB_TYPE
           value: postgres
         - name: DB_HOST
-          value: postgresql
+          value: database-1.ceblquvck1ro.us-east-1.rds.amazonaws.com
         - name: DB_PORT
           value: "5432"
         - name: DB_DATABASE
           value: etherpad
         - name: DB_USER
-          value: ether
+          value: postgres
         - name: DB_PASS
-          value: ether
+          value: etherpad
         - name: NODE_ENV
           value: production
         image: quay.io/gpte-devops-automation/etherpad:latest
