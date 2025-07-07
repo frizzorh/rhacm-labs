@@ -25,19 +25,19 @@ spec:
           value: postgres
         - name: DB_URL
           value: 'postgresql://postgres:etherpad@database-1.ceblquvck1ro.us-east-1.rds.amazonaws.com:5432/etherpad?sslmode=allow'
-        - name: DB_HOST
-          value: ''
-        - name: DB_PORT
-          value: ''
-        - name: DB_DATABASE
-          value: ''
-        - name: DB_USER
-          value: ''
-        - name: DB_PASS
-          value: ''
+#        - name: DB_HOST
+#          value: ''
+#        - name: DB_PORT
+#          value: ''
+#        - name: DB_DATABASE
+#          value: ''
+#        - name: DB_USER
+#          value: ''
+#        - name: DB_PASS
+#          value: ''
         - name: NODE_ENV
           value: production
-        image: quay.io/gpte-devops-automation/etherpad:latest
+        image: etherpad/etherpad:latest
         imagePullPolicy: Always
         name: etherpad
         ports:
