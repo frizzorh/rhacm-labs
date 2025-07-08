@@ -37,7 +37,7 @@ spec:
 #          value: ''
         - name: NODE_ENV
           value: production
-        image: etherpad/etherpad:1.9.1
+        image: etherpad/etherpad:2.3.2
 #        command: ["/bin/bash"]
 #        args:
 #          - '-c'
