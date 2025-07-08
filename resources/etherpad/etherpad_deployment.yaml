@@ -24,7 +24,7 @@ spec:
         - name: DB_TYPE
           value: postgres
         - name: DB_URL
-          value: postgresql://postgres:etherpad@database-1.cdgkeivikc1o.eu-west-1.rds.amazonaws.com:5432/etherpad?sslmode=allow
+          value: 'postgresql://postgres:etherpad@database-1.cdgkeivikc1o.eu-west-1.rds.amazonaws.com:5432/etherpad?sslmode=allow'
 #        - name: DB_HOST
 #          value: ''
 #        - name: DB_PORT
