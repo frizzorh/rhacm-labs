@@ -38,10 +38,11 @@ spec:
         - name: NODE_ENV
           value: production
         image: quay.io/gpte-devops-automation/etherpad:latest
-        command: ["/bin/sh"]
+        command: ["/bin/bash"]
         args:
           - '-c'
           - >-
+            set -eux &&
             cp config/settings.json . && 
             sed -i "s/DB_TYPE/${DB_TYPE}/" settings.json &&            
             sed -i "s/DB_URL/${DB_URL}/" settings.json &&            
