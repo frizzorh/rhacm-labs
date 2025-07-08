@@ -43,9 +43,13 @@ spec:
           - '-c'
           - >-
             set -eux &&
-            cp config/settings.json . && 
+            cp config/settings.json . &&
             sed -i "s|DB_TYPE|${DB_TYPE}|" settings.json &&            
-            sed -i "s|DB_URL|${DB_URL}|" settings.json &&
+            sed -i '/DB_HOST/d' settings.json &&
+            sed -i '/DB_PORT/d' settings.json &&
+            sed -i '/DB_DATABASE/d' settings.json &&
+            sed -i '/DB_USER/d' settings.json &&
+            sed -i "s|.*DB_PASS-*| url: \"${DB_URL}\"|" settings.json &&
             cat settings.json &&
             ./src/bin/run.sh
         imagePullPolicy: Always
