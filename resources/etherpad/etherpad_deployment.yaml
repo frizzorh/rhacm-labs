@@ -42,7 +42,10 @@ spec:
         args:
           - '-c'
           - >-
-              cp config/settings.json . && ./src/bin/run.sh
+            cp config/settings.json . && 
+            sed -i "s/DB_TYPE/${DB_TYPE}/" settings.json &&            
+            sed -i "s/DB_URL/${DB_URL}/" settings.json &&            
+            ./src/bin/run.sh
         imagePullPolicy: Always
         name: etherpad
         ports:
