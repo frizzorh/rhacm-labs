@@ -23,29 +23,11 @@ spec:
       - env:
         - name: DB_TYPE
           value: postgres
-        - name: DB_URL
-          value: 'postgresql://postgres:etherpad@database-1.cofryfniazvh.eu-west-1.rds.amazonaws.com:5432/etherpad?sslmode=require'
-#        - name: DB_HOST
-#          value: 'database-1.cdgkeivikc1o.eu-west-1.rds.amazonaws.com'
-#        - name: DB_PORT
-#          value: '5432'
-#        - name: DB_DATABASE
-#          value: 'etherpad?sslmode=allow'
-#        - name: DB_USER
-#          value: 'postgres'
-#        - name: DB_PASS
-#          value: 'etherpad'
+        - name: DB_CONNECTION_STRING
+          value: 'postgres://postgres:etherpad@database-1.c0ngqboy0n96.eu-central-1.rds.amazonaws.com:5432/etherpad?sslmode=no-verify'
         - name: NODE_ENV
           value: production
         image: etherpad/etherpad:2.3.2
-        command: ["/bin/bash"]
-        args:
-         - '-c'
-         - >-
-           set -eux &&
-           sed -i "s|.*DB_URL.*| \"connectionString\" : \"${DB_URL}\"|" /opt/etherpad-lite/settings.json &&
-           cat /opt/etherpad-lite/settings.json &&
-           pnpm run prod
         imagePullPolicy: Always
         name: etherpad
         ports:
@@ -75,8 +57,9 @@ spec:
           successThreshold: 1
           timeoutSeconds: 1
         volumeMounts:
-        - mountPath: /opt/etherpad/config
+        - mountPath: /opt/etherpad-lite/settings.json
           name: etherpad-settings
+          subPath: settings.json
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
