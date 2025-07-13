@@ -27,7 +27,7 @@ spec:
           value: 'postgres://postgres:etherpad@database-1.c0ngqboy0n96.eu-central-1.rds.amazonaws.com:5432/etherpad?sslmode=no-verify'
         - name: NODE_ENV
           value: production
-        image: etherpad/etherpad:2.3.2
+        image: quay.io/frossi/etherpad-ocp:2.3.2
         imagePullPolicy: Always
         name: etherpad
         ports:
